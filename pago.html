@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - AngelSport</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --primary-color: #0071dc;
+            --secondary-color: #004a99;
+            --background-color: #f8f9fa;
+            --text-color: #2d3748;
+            --success-color: #38a169;
+            --error-color: #e53e3e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            padding: 5px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--text-color);
+        }
+
+        .cart-item-price {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .quantity-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid #cbd5e0;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .quantity-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .cart-item-remove {
+            color: #cbd5e0;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .cart-item-remove:hover {
+            color: var(--error-color);
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 113, 220, 0.1);
+        }
+
+        .payment-methods {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-type {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .payment-type:hover {
+            border-color: var(--primary-color);
+        }
+
+        .payment-type i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .card-details {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .card-info-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .input-with-icon {
+            position: relative;
+        }
+
+        .card-icons {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .card-icons i {
+            font-size: 1.5rem;
+            color: #718096;
+        }
+
+        .pay-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            transition: background 0.2s ease;
+        }
+
+        .pay-button:hover {
+            background: var(--secondary-color);
+        }
+
+        .total-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            
+            .card-info-group {
+                grid-template-columns: 1fr;
+            }
+        }    .header-nav {
+        position: relative;
+        margin-bottom: 2rem;
+        max-width: 1200px;
+        margin: 0 auto 30px;
+        padding: 0 20px;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: var(--primary-color);
+        transition: all 0.3s ease;
+        padding: 10px 15px;
+        border-radius: 8px;
+        background: rgba(0, 113, 220, 0.1);
+    }
+
+    .back-link:hover {
+        background: rgba(0, 113, 220, 0.2);
+        transform: translateX(-5px);
+    }
+
+    .back-link i {
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .back-link:hover i {
+        transform: scale(1.1);
+    }
+
+    .back-text {
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .header-nav {
+            padding: 0 15px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .back-link {
+            padding: 8px 12px;
+        }
+        
+        .back-text {
+            display: none;
+        }
+    }
+    </style>
+</head>
+<body>
+  <header class="header-nav">
+    <a href="inicio.html" class="back-link" aria-label="Volver al inicio">
+        <i class='bx bx-chevron-left'></i>
+        <span class="back-text">Volver a la tienda</span>
+    </a>
+</header>
+    <div class="main-container">
+        <!-- Sección del Carrito -->
+        <div class="section">
+            <h2>Tu Carrito</h2>
+            <div class="cart-items">
+                <!-- Los items se cargarán dinámicamente aquí -->
+            </div>
+            <div class="total-section">
+                Total: <span class="cart-total-price">$0.00</span>
+            </div>
+        </div>
+
+        <!-- Sección de Checkout -->
+        <div class="section">
+            <h2>Información de Envío</h2>
+            <form id="shipping-form">
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Dirección</label>
+                    <input type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Ciudad</label>
+                    <input type="text" required>
+                </div>
+
+                <div class="card-info-group">
+                    <div class="form-group">
+                        <label>Código Postal</label>
+                        <input type="text" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="tel" required>
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 1.5rem;">Método de Pago</h2>
+                <div class="payment-methods">
+                    <div class="payment-type">
+                        <input type="radio" name="payment" checked>
+                        <i class='bx bx-credit-card'></i>
+                        Tarjeta de Crédito/Débito
+                    </div>
+                    
+                    <div class="payment-type">
+                        <input type="radio" name="payment">
+                        <i class='bx bxl-paypal'></i>
+                        PayPal
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Número de Tarjeta</label>
+                    <div class="input-with-icon">
+                        <input type="text" placeholder="0000 0000 0000 0000" required>
+                        <div class="card-icons">
+                            <i class='bx bxl-visa'></i>
+                            <i class='bx bxl-mastercard'></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-info-group">
+                    <div class="form-group">
+                        <label>Fecha de Expiración</label>
+                        <input type="text" placeholder="MM/AA" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="text" placeholder="123" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="pay-button">
+                    <i class='bx bx-lock-alt'></i>
+                    Pagar Ahora
+                </button>
+            </form>
+        </div>
+    </div>
+  <script src="scripts/modal.js"></script>
+  <script src="scripts/cart.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load cart data from localStorage
+      const savedCart = localStorage.getItem('angelSportCart');
+      if (savedCart) {
+        try {
+          const cartData = JSON.parse(savedCart);
+          let items = cartData.items || [];
+          let total = 0; // Initialize total to 0 and calculate it fresh
+          
+          // Get DOM elements
+          const cartItemsContainer = document.querySelector('.cart-items');
+          const cartTotalPrice = document.querySelector('.cart-total-price');
+          
+          // Clear existing items
+          cartItemsContainer.innerHTML = '';
+          
+          // Display cart items
+          items.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-item';
+            itemElement.dataset.id = item.id;
+            itemElement.innerHTML = `
+              <img src="${item.image}" alt="${item.name}">
+              <div class="cart-item-details">
+                <div class="cart-item-title">${item.name}</div>
+                <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                <div class="cart-item-quantity">
+                  <button class="quantity-btn minus">-</button>
+                  <span>${item.quantity}</span>
+                  <button class="quantity-btn plus">+</button>
+                </div>
+              </div>
+              <div class="cart-item-remove">&times;</div>
+            `;
+            
+            cartItemsContainer.appendChild(itemElement);
+            
+            // Add event listeners for buttons
+            const minusBtn = itemElement.querySelector('.minus');
+            const plusBtn = itemElement.querySelector('.plus');
+            const removeBtn = itemElement.querySelector('.cart-item-remove');
+            
+            // Decrease quantity
+            minusBtn.addEventListener('click', function() {
+              if (item.quantity > 1) {
+                item.quantity--;
+                itemElement.querySelector('.cart-item-quantity span').textContent = item.quantity;
+                updateCartTotal();
+                saveCart();
+              }
+            });
+            
+            // Increase quantity
+            plusBtn.addEventListener('click', function() {
+              item.quantity++;
+              itemElement.querySelector('.cart-item-quantity span').textContent = item.quantity;
+              updateCartTotal();
+              saveCart();
+            });
+            
+            // Remove item
+            removeBtn.addEventListener('click', function() {
+              items = items.filter(i => i.id !== item.id);
+              itemElement.remove();
+              updateCartTotal();
+              saveCart();
+            });
+          });
+          
+          // Calculate and update total price immediately
+          updateCartTotal();
+          
+          // Function to update cart total
+          function updateCartTotal() {
+            total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotalPrice.textContent = `$${total.toFixed(2)}`;
+            
+            // Also update the payment button to show the total
+            const paymentButton = document.querySelector('#payment-form button[type="submit"]');
+            if (paymentButton) {
+              paymentButton.textContent = `Pagar $${total.toFixed(2)}`;
+            }
+          }
+          
+          // Function to save cart to localStorage
+          function saveCart() {
+            const cartData = {
+              items: items,
+              total: total,
+              timestamp: new Date().getTime()
+            };
+            localStorage.setItem('angelSportCart', JSON.stringify(cartData));
+          }
+        } catch (error) {
+          console.error('Error loading cart data:', error);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

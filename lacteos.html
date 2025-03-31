@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deportes y Suplementos</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    		
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="menu/menu.css">
+    <link rel="stylesheet" href="css/searchbar.css">
+    <link rel="stylesheet" href="css/producto.css">
+    <link rel="stylesheet" href="css/producto2.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/barraCategoriaMenu.css">
+</head>
+<body>
+    <header>
+        <!--Logo e nombre pag-->
+        <h1>  <a href="inicio.html">Angeles </h1></a>
+        <button id="cart-button" class="cart">
+            <div class="content-avatars">
+                <div class="cart-status"></div>
+                <div class="avatars">
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="notice-content">
+                <div class="cart-count">0 items</div>
+                <div class="cart-total-mini">$0.00</div>
+            </div>
+        </button>
+        <!--Barra de busqueda-->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar productos...">
+            <button class="buscar-button" id="search-button"><i class='bx bx-search-alt-2'></i></button>
+        </div>
+
+    </header>
+    <!--Barra de menu Categoria-->
+    <div class="barra-menu">
+        <nav class="barra-nav">
+            <ul class="menu-categories">
+                <li class="category"><i class='bx bxs-category'></i>Departamentos
+					<ul class="submenu">
+						<li><a href="categoria_a.html"> Lacteos</a></li>
+						<li><a href="botanas.html"> Botanas</a></li>
+						<li><a href="refrescos.html"> Refrescos</a></li>
+						<li><a href="limpieza.html"> Limpieza</a></li>
+					</ul>
+                </li>
+                <li class="category"><a href="ayuda.html"><i class="fas fa-question-circle"></i> Ayuda</a></li>
+
+                <li class="category"><a href="nosotros.html"><i class="fas fa-user-friends"></i> Nosotros</a></li>
+				<li class="category"><a href="mi_cuenta.html"><i class="fas fa-address-book"></i> Mi cuenta</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <h2>Leches</h2>
+    <!-- Productos Productos  ProductosProductos-->
+    <div class="containerproducto">
+        <div class="product" data-price="24.00">
+            <img src="img/00750102054439L.webp" alt="Producto 1" class="product-image">
+            <p class="price">$24.00</p>
+            <h3>Nutri</h3>
+            <p>Producto lácteo combinado Nutri deslactosada 1 l            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="39.00">
+            <img src="img/00750102054841L.webp" alt="Producto 1" class="product-image">
+            <p class="price">$39.00</p>
+            <h3>Nutri</h3>
+            <p>Producto lácteo combinado Nutri deslactosada 1.5 l            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="52.00">
+            <img src="img/00750102055067L.webp" alt="Producto 1" class="product-image">
+            <p class="price">$52.00</p>
+            <h3>Lala</h3>
+            <p>Leche Lala deslactosada 1.5 l</p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="42.00">
+            <img src="img/00750102055097L.webp" alt="Producto 1" class="product-image">            
+            <p class="price">$42.00</p>
+            <h3>Lala</h3>
+            <p>Leche Lala 100 sin lactosa proteína light 1 l</p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+    </div>
+    
+    <!-- ... /producto1 ... -->
+
+
+    <!-- ... producto2 ... -->
+    <div class="containerproducto">
+        <div class="product" data-price="41.00">
+            <img src="img/00750102054844L.webp" alt="Producto 1" class="product-image">
+            <p class="price">$41.00</p>
+            <h3>Lala</h3>
+            <p>Leche fresca Lala 100 sin lactosa proteína light 1 l            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="35.00">
+            <img src="img/00750129560015L.webp" alt="Producto 1" class="product-image">
+            <p class="price">$35.00</p>
+            <h3>Santa Clara</h3>
+            <p>Leche Santa Clara deslactosada 1 l</p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="35.00">
+            <img src="img/00750105534900L.webp" alt="Producto 1" class="product-image">
+            <p class="price">$35.00</p>
+            <h3>Santa Clara</h3>
+            <p>Leche Santa Clara deslactosada light de 1 l
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="52.00">
+            <img src="img/00750102055344L.webp" alt="Producto 1" class="product-image">            
+            <p class="price">$52.00</p>
+            <h3>Lala</h3>
+            <p>Leche Lala deslactosada light baja en grasa 1.5 l</p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+    </div>
+    <!-- ... /producto2 ... -->
+<h2>Cremas</h2>
+<!-- Productos Productos  ProductosProductos-->
+<div class="containerproducto">
+    <div class="product" data-price="41.00">
+        <img src="img/00750102056190L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$41.00</p>
+        <h3>Lala</h3>
+        <p>Crema ácida Lala entera 426 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="82.00">
+        <img src="img/00750102051146L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$82.00</p>
+        <h3>Lala</h3>
+        <p>Crema ácida Lala entera 900 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="38.00">
+        <img src="img/00750102056193L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$38.00</p>
+        <h3>Lala</h3>
+        <p>Crema ácida Lala light 426 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="90.00">
+        <img src="img/00750102053225L.webp" alt="Producto 1" class="product-image">            
+        <p class="price">$90.00</p>
+        <h3>Lala</h3>
+        <p>Crema ácida Lala light 900 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+</div>
+<!-- ... /producto1 ... -->
+
+
+<!-- ... producto2 ... -->
+<div class="containerproducto">
+    <div class="product" data-price="62.00">
+        <img src="img/00750109210103L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$62.00</p>
+        <h3>Lyncott</h3>
+        <p>Crema para batir Lyncott 500 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="19.00">
+        <img src="img/00750102051313L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$19.00</p>
+        <h3>Lala</h3>
+        <p>Crema ácida Lala entera 200 ml</p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="38.00">
+        <img src="img/00750102056202L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$38.00</p>
+        <h3>Lala</h3>
+        <p>Crema ácida Lala deslactosada 426 ml
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="39.00">
+        <img src="img/00750105537458L.webp" alt="Producto 1" class="product-image">            
+        <p class="price">$39.00</p>
+        <h3>Santa Clara</h3>
+        <p>Crema ácida Santa Clara premium 350 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+</div>
+<h2>Yogurt</h2>
+<!-- Productos Productos  ProductosProductos-->
+<div class="containerproducto">
+    <div class="product" data-price="43.00">
+        <img src="img/00750102056373L1.webp" alt="Producto 1" class="product-image">
+        <p class="price">$43.00</p>
+        <h3>Lala</h3>
+        <p>Yogurt batido Lala fresa 900 g
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="43.00">
+        <img src="img/00750102056377L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$43.00</p>
+        <h3>Lala</h3>
+        <p>Yogurt batido Lala natural endulzado 900 g
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="43.00">
+        <img src="img/00750102056372L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$43.00</p>
+        <h3>Lala</h3>
+        <p>Yogurt batido Lala durazno 900 g
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="43.00">
+        <img src="img/00750102056376L.webp" alt="Producto 1" class="product-image">            
+        <p class="price">$43.00</p>
+        <h3>Lala</h3>
+        <p>Yogurt batido Lala manzana 900 g
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+</div>
+<!-- ... /producto1 ... -->
+
+
+<!-- ... producto2 ... -->
+<div class="containerproducto">
+    <div class="product" data-price="19.00">
+        <img src="img/00750102056864L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$19.00</p>
+        <h3>Lala</h3>
+        <p>Yogurt bebible Lala 100 natural endulzado 220 g
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="31.00">
+        <img src="img/00750647510077L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$31.00</p>
+        <h3>Nestlé</h3>
+        <p>Yogurt bebible Nestlé licuado nuez con avena salvado de trigo 500 g
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="8.00">
+        <img src="img/00750104009078L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$8.00</p>
+        <h3>Yoplait</h3>
+        <p>Yoghurt Yoplait con frutas y cereales 125 g
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="8.00">
+        <img src="img/00750104009074L.webp" alt="Producto 1" class="product-image">            
+        <p class="price">$8.00</p>
+        <h3>Yoplait</h3>
+        <p>Yoghurt Yoplait con fresas 125 g
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+</div>
+    <!-- ... modal ... -->
+    <div id="productModal" class="product-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-product-info">
+                <img id="modalImage" src="" alt="Product Image">
+                <div class="modal-details">
+                    <h2 class="modal-title"></h2>
+                    <p class="modal-description"></p>
+                    <p class="modal-price"></p>
+                    <div class="modal-extra-info">
+                        <ul>
+                            <li><i class='bx bx-check'></i> Envío gratis</li>
+                            <li><i class='bx bx-time'></i> Entrega en 1-3 horas</li>
+                            <li><i class='bx bx-package'></i> Devolución gratuita</li>
+                        </ul>
+                    </div>
+                    <button class="buttoncarrito">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ... /modal ... -->
+
+    <div class="cart-container" id="cart">
+        <div class="cart-header">
+            <h2>Carrito</h2>
+            <span class="cart-close">&times;</span>
+        </div>
+        <div class="cart-items">
+            <!-- Los items se agregarán dinámicamente -->
+        </div>
+        <div class="cart-total">
+            <div>Total: <span class="cart-total-price">$0.00</span></div>
+            <a href="pago.html"><button class="checkout-btn">Proceder al Pago</button></a>
+        </div>
+    </div>        <footer class="footer">
+        <div class="footer-bottom">
+            <h3>Contacto</h3>
+                <p><i class='bx bx-envelope'></i> abarrotesangeles@gmail.com</p>
+                <p><i class='bx bx-phone'></i> (52) 637-325-1251</p>
+                <p><i class='bx bx-map'></i> Av. Principal #123, CDMX</p>
+            <p>&copy; 2024 Angeles. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="scripts/userDisplay.js"></script>
+<script src="scripts/cart.js"></script>
+<script src="scripts/modal.js"></script>
+<script src="scripts/search.js"></script>
+</body>
+</html>

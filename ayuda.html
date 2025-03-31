@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Ayuda - Abarrotes Ángeles</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --primary-color: #0071dc;
+            --secondary-color: #004a99;
+            --accent-color: #FFD700;
+            --text-color: #2d3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7));
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .help-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .help-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .help-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .help-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .faq-list {
+            margin: 40px 0;
+        }
+
+        .faq-item {
+            background: white;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            margin-top: 8px;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 80px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="inicio.html" class="back-button"><i class='bx bx-arrow-back'></i></a>
+        <h1>¿Cómo podemos ayudarte?</h1>
+        <p>Estamos aquí para resolver tus dudas las 24 horas</p>
+    </header>
+
+    <div class="container">
+        <!-- Categorías de ayuda -->
+        <div class="help-categories">
+            <div class="help-card">
+                <i class='bx bxs-package'></i>
+                <h3>Pedidos y Entregas</h3>
+                <p>Seguimiento de pedidos, horarios de entrega y políticas</p>
+            </div>
+            <div class="help-card">
+                <i class='bx bxs-credit-card'></i>
+                <h3>Pagos y Facturación</h3>
+                <p>Métodos de pago, promociones y consultas de facturación</p>
+            </div>
+            <div class="help-card">
+                <i class='bx bxs-store'></i>
+                <h3>Nuestra Tienda</h3>
+                <p>Horarios, ubicación y servicios especiales</p>
+            </div>
+        </div>
+
+        <!-- Preguntas frecuentes -->
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>¿Hacen entregas a domicilio?</h3>
+                <p>Sí, entregamos en toda Caborca con un mínimo de compra de $200. Consulta nuestro horario de entregas.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Qué métodos de pago aceptan?</h3>
+                <p>Aceptamos efectivo, tarjetas de crédito/débito y transferencias bancarias.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Puedo hacer pedidos por teléfono?</h3>
+                <p>¡Claro! Llámanos al (637) 325 1251 y con gusto tomaremos tu pedido.</p>
+            </div>
+        </div>
+
+        <!-- Métodos de contacto -->
+        <h2 class="section-title">Contáctanos Directamente</h2>
+        <div class="contact-methods">
+            <div class="contact-card">
+                <i class='bx bx-phone' style="font-size: 2rem;"></i>
+                <h3>Llamada Telefónica</h3>
+                <p>(637) 325 1251<br>24/7 Atención a clientes</p>
+            </div>
+            <div class="contact-card">
+                <i class='bx bx-envelope' style="font-size: 2rem;"></i>
+                <h3>Correo Electrónico</h3>
+                <p>soporte@abarrotesangeles.com<br>Respuesta en menos de 2 horas</p>
+            </div>
+            <div class="contact-card">
+                <i class='bx bx-map' style="font-size: 2rem;"></i>
+                <h3>Visítanos</h3>
+                <p>Av. Santa Cecilia #456<br>Horario: 7 AM - 9 PM</p>
+            </div>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <div class="contact-form">
+            <h2>Envíanos un Mensaje</h2>
+            <form>
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Tu mensaje</label>
+                    <textarea rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <!-- Agrega aquí tu footer existente -->
+    </footer>
+</body>
+</html>

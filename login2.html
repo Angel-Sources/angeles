@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - AngelSport</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --primary-color: #0071dc;
+            --secondary-color: #0051a8;
+            --accent-color: #ff6b6b;
+            --text-color: #2d3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0071dc 0%, #00c8ff 100%);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .wrapper {
+            width: 420px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .wrapper h1 {
+            font-size: 32px;
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .input-box {
+            position: relative;
+            margin: 25px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 50px;
+            background: rgba(245, 245, 245, 0.9);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            font-size: 16px;
+            color: var(--text-color);
+            padding: 0 45px 0 20px;
+            transition: all 0.3s ease;
+        }
+
+        .input-box input:focus {
+            background: white;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 113, 220, 0.1);
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: var(--primary-color);
+        }
+
+        .btn {
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white !important;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 113, 220, 0.3);
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 25px;
+            color: var(--text-color);
+        }
+
+        .register-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .register-link a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* Nuevos estilos específicos para login */
+        .password-options {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        .password-options a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .password-options a:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 480px) {
+            .wrapper {
+                width: 90%;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="" id="loginForm">
+            <h1>Bienvenido</h1>
+            <div class="input-box">
+                <input type="email" placeholder="Correo electrónico" required id="email">
+                <i class='bx bxs-envelope'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Contraseña" required id="password">
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            
+            <div class="password-options">
+                <label>
+                    <input type="checkbox"> Recordarme
+                </label>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <button type="submit" class="btn">Iniciar Sesión</button>
+            <p class="register-link">¿No tienes cuenta? <a href="index.html">Regístrate ahora</a></p>
+        </form>
+    </div>
+    <script src="scripts/register.js"></script>
+</body>
+</html>

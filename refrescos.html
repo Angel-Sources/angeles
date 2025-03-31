@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deportes y Suplementos</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    		
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="menu/menu.css">
+    <link rel="stylesheet" href="css/searchbar.css">
+    <link rel="stylesheet" href="css/producto.css">
+    <link rel="stylesheet" href="css/producto2.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/barraCategoriaMenu.css">
+</head>
+<body>
+    <header>
+        <!--Logo e nombre pag-->
+        <!--<a href="inicio.html"><img class="logoImg" src="img/wings-removebg-preview.png"></a>-->
+        <h1>  <a href="inicio.html">Angeles</a></h1>
+        <button id="cart-button" class="cart">
+            <div class="content-avatars">
+                <div class="cart-status"></div>
+                <div class="avatars">
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="notice-content">
+                <div class="cart-count">0 items</div>
+                <div class="cart-total-mini">$0.00</div>
+            </div>
+        </button>
+        <!--Barra de busqueda-->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar productos...">
+            <button class="buscar-button" id="search-button"><i class='bx bx-search-alt-2'></i></button>
+        </div>
+
+    </header>
+    <!--Barra de menu Categoria-->
+    <div class="barra-menu">
+        <nav class="barra-nav">
+            <ul class="menu-categories">
+                <li class="category"><i class='bx bxs-category'></i>Departamentos
+					<ul class="submenu">
+						<li><a href="lacteos.html"> Lacteos</a></li>
+						<li><a href="botanas.html"> Botanas</a></li>
+						<li><a href="refrescos.html"> Refrescos</a></li>
+						<li><a href="limpieza.html"> Limpieza</a></li>
+					</ul>
+                </li>
+                <li class="category"><a href="ayuda.html"><i class="fas fa-question-circle"></i> Ayuda</a></li>
+
+                <li class="category"><a href="nosotros.html"><i class="fas fa-user-friends"></i> Nosotros</a></li>
+				<!-- ... existing code ... -->
+				<li class="category"><a href="mi_cuenta.html"><i class="fas fa-address-book"></i> Mi cuenta</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <h2>¡Mas Vendidos!</h2>
+    <div class="containerproducto">
+        <div class="product" data-price="25.00">
+            <img src="refrescos/11.webp" alt="Producto 1" class="product-image">
+            <p class="price">$25.00</p>
+            <h3>Coca Cola</h3>
+            <p>Refresco Coca Cola 1 l </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="16.00">
+            <img src="refrescos/u.webp" alt="Producto 1" class="product-image">
+            <p class="price">$16.00</p>
+            <h3>Dr Pepper</h3>
+            <p>Refresco Dr Pepper cream soda 355 ml</p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="30.00">
+            <img src="refrescos/33.webp" alt="Producto 1" class="product-image">
+            <p class="price">$30.00</p>
+            <h3>Coca Cola</h3>
+            <p>Refresco Coca Cola sin azúcar 2.5 l
+
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="34.00">
+            <img src="refrescos/44.webp" alt="Producto 1" class="product-image">            
+            <p class="price">$34.00</p>
+            <h3>Coca Cola</h3>
+            <p>Refresco Coca Cola 2 l
+
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+    </div>
+    <h2>Sabor Cola</h2>
+    <!-- Productos Productos  ProductosProductos-->
+    <div class="containerproducto">
+        <div class="product" data-price="25.00">
+            <img src="refrescos/11.webp" alt="Producto 1" class="product-image">
+            <p class="price">$25.00</p>
+            <h3>Coca Cola</h3>
+            <p>Refresco Coca Cola 1 l
+
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="25.00">
+            <img src="refrescos/22.webp" alt="Producto 1" class="product-image">
+            <p class="price">$25.00</p>
+            <h3>Coca Cola</h3>
+            <p>Refresco Coca Cola light 1 l
+
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="30.00">
+            <img src="refrescos/33.webp" alt="Producto 1" class="product-image">
+            <p class="price">$30.00</p>
+            <h3>Coca Cola</h3>
+            <p>Refresco Coca Cola sin azúcar 2.5 l</p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="34.00">
+            <img src="refrescos/44.webp" alt="Producto 1" class="product-image">            
+            <p class="price">$34.00</p>
+            <h3>Coca Cola</h3>
+            <p>Refresco Coca Cola 2 l
+
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+    </div>
+    
+    <!-- ... /producto1 ... -->
+
+
+    <!-- ... producto2 ... -->
+    <div class="containerproducto">
+        <div class="product" data-price="16.00">
+            <img src="refrescos/55.webp" alt="Producto 1" class="product-image">
+            <p class="price">$16.00</p>
+            <h3>Coca Cola</h3>
+            <p>Refresco Coca Cola sabor original 600 ml
+
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="21.00">
+            <img src="refrescos/66.webp" alt="Producto 1" class="product-image">
+            <p class="price">$21.00</p>
+            <h3>Coca Cola</h3>
+            <p>Refresco Coca Cola light 600 ml
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="19.00">
+            <img src="refrescos/77.webp" alt="Producto 1" class="product-image">
+            <p class="price">$19.00</p>
+            <h3>Coca Cola</h3>
+            <p>Refresco Coca Cola sin azúcar 355 ml
+
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="20.00">
+            <img src="refrescos/88.webp" alt="Producto 1" class="product-image">            
+            <p class="price">$20.00</p>
+            <h3>Coca Cola</h3>
+            <p>Refresco Coca Cola light 355 ml
+
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+    </div>
+    <!-- ... /producto2 ... -->
+
+
+<h2>Light y Sin Azúcar</h2>
+<!-- Productos Productos  ProductosProductos-->
+<div class="containerproducto">
+    <div class="product" data-price="16.00">
+        <img src="refrescos/q.webp" alt="Producto 1" class="product-image">
+        <p class="price">$16.00</p>
+        <h3>Sidral Mundet</h3>
+        <p>Refresco Sidral Mundet light sabor manzana de 600 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="20.00">
+        <img src="refrescos/w.webp" alt="Producto 1" class="product-image">
+        <p class="price">$20.00</p>
+        <h3>Sidral Mundet</h3>
+        <p>Refresco Sidral Mundet light sabor manzana de 2 l
+
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="20.00">
+        <img src="refrescos/e.webp" alt="Producto 1" class="product-image">
+        <p class="price">$20.00</p>
+        <h3>Pepsi</h3>
+        <p>Refresco Pepsi light sabor cola de 600 ml
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="18.00">
+        <img src="refrescos/r.webp" alt="Producto 1" class="product-image">            
+        <p class="price">$18.00</p>
+        <h3>Peñafiel</h3>
+        <p>Agua mineral Peñafiel mandarina sin azúcar 600 ml
+
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+</div>
+<!-- ... /producto1 ... -->
+
+
+<!-- ... producto2 ... -->
+<div class="containerproducto">
+    <div class="product" data-price="19.00">
+        <img src="refrescos/as.webp" alt="Producto 1" class="product-image">
+        <p class="price">$19.00</p>
+        <h3>Dr Pepper</h3>
+        <p>Refresco Dr Pepper light 600 ml</p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="20.00">
+        <img src="refrescos/sd.webp" alt="Producto 1" class="product-image">
+        <p class="price">$20.00</p>
+        <h3>Peñafiel</h3>
+        <p>Agua mineral Peñafiel Adas ligera sabor naranja 600 l
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="31.00">
+        <img src="refrescos/dd.webp" alt="Producto 1" class="product-image">
+        <p class="price">$31.00</p>
+        <h3>Peñafiel</h3>
+        <p>Agua mineral Peñafiel sin azúcar mandarina 2 l
+
+
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="31.00">
+        <img src="refrescos/ff.webp" alt="Producto 1" class="product-image">            
+        <p class="price">$31.00</p>
+        <h3>Peñafiel</h3>
+        <p>Agua mineral Peñafiel sin azúcar fresa 2 l
+
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+</div>
+<h2>Sabores Varios
+</h2>
+<!-- Productos Productos  ProductosProductos-->
+<div class="containerproducto">
+    <div class="product" data-price="30.00">
+        <img src="refrescos/z.webp" alt="Producto 1" class="product-image">
+        <p class="price">$30.00</p>
+        <h3>Squirt</h3>
+        <p>Refresco Squirt light sabor toronja 2 l
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="40.00">
+        <img src="refrescos/x.webp" alt="Producto 1" class="product-image">
+        <p class="price">$40.00</p>
+        <h3>Squirt</h3>
+        <p>Refresco Squirt sabor toronja 3 l
+
+
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="16.00">
+        <img src="refrescos/c.webp" alt="Producto 1" class="product-image">
+        <p class="price">$16.00</p>
+        <h3>Sidral Mundet</h3>
+        <p>Refresco Sidral Mundet light sabor manzana de 600 ml
+
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="40.00">
+        <img src="refrescos/v.webp" alt="Producto 1" class="product-image">            
+        <p class="price">$40.00</p>
+        <h3>7UP</h3>
+        <p>Refresco 7UP sabor lima limón 3 </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+</div>
+<!-- ... /producto1 ... -->
+
+
+<!-- ... producto2 ... -->
+<div class="containerproducto">
+    <div class="product" data-price="16.00">
+        <img src="refrescos/u.webp" alt="Producto 1" class="product-image">
+        <p class="price">$16.00</p>
+        <h3>Dr Pepper</h3>
+        <p>Refresco Dr Pepper cream soda 355 ml</p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="16.00">
+        <img src="refrescos/i.webp" alt="Producto 1" class="product-image">
+        <p class="price">$16.00</p>
+        <h3>Dr Pepper</h3>
+        <p>Refresco Dr Pepper sabor dark berry 355 ml
+
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="38.00">
+        <img src="refrescos/o.webp" alt="Producto 1" class="product-image">
+        <p class="price">$38.00</p>
+        <h3>Sangría Señorial</h3>
+        <p>Refresco Sangría Señorial 2 l
+
+
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="16.00">
+        <img src="refrescos/p.webp" alt="Producto 1" class="product-image">            
+        <p class="price">$16.00</p>
+        <h3>Delaware Punch</h3>
+        <p>Refresco Delaware Punch sabor uva 600 ml
+
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+</div>
+    <!-- ... modal ... -->
+    <div id="productModal" class="product-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-product-info">
+                <img id="modalImage" src="" alt="Product Image">
+                <div class="modal-details">
+                    <h2 class="modal-title"></h2>
+                    <p class="modal-description"></p>
+                    <p class="modal-price"></p>
+                    <div class="modal-extra-info">
+                        <ul>
+                            <li><i class='bx bx-check'></i> Envío gratis</li>
+                            <li><i class='bx bx-time'></i> Entrega en 1-3 horas</li>
+                            <li><i class='bx bx-package'></i> Devolución gratuita</li>
+                        </ul>
+                    </div>
+                    <button class="buttoncarrito">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ... /modal ... -->
+
+    <div class="cart-container" id="cart">
+        <div class="cart-header">
+            <h2>Carrito</h2>
+            <span class="cart-close">&times;</span>
+        </div>
+        <div class="cart-items">
+            <!-- Los items se agregarán dinámicamente -->
+        </div>
+        <div class="cart-total">
+            <div>Total: <span class="cart-total-price">$0.00</span></div>
+            <a href="pago.html"><button class="checkout-btn">Proceder al Pago</button></a>
+        </div>
+    </div>        <footer class="footer">
+        <div class="footer-bottom">
+            <h3>Contacto</h3>
+                <p><i class='bx bx-envelope'></i> abarrotesangeles@gmail.com</p>
+                <p><i class='bx bx-phone'></i> (52) 637-325-1251</p>
+                <p><i class='bx bx-map'></i> Av. Principal #123, CDMX</p>
+            <p>&copy; 2024 Angeles. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="scripts/userDisplay.js"></script>
+<script src="scripts/cart.js"></script>
+<script src="scripts/modal.js"></script>
+<script src="scripts/search.js"></script>
+
+</body>
+</html>

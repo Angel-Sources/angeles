@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deportes y Suplementos</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    		
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="menu/menu.css">
+    <link rel="stylesheet" href="css/searchbar.css">
+    <link rel="stylesheet" href="css/producto.css">
+    <link rel="stylesheet" href="css/producto2.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/barraCategoriaMenu.css">
+</head>
+<body>
+    <header>
+        <!--Logo e nombre pag-->
+        <!--<a href="inicio.html"><img class="logoImg" src="img/wings-removebg-preview.png"></a>-->
+        <h1>  <a href="inicio.html">Angeles</a></h1>
+        <button id="cart-button" class="cart">
+            <div class="content-avatars">
+                <div class="cart-status"></div>
+                <div class="avatars">
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="notice-content">
+                <div class="cart-count">0 items</div>
+                <div class="cart-total-mini">$0.00</div>
+            </div>
+        </button>
+        <!--Barra de busqueda-->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar productos...">
+            <button class="buscar-button" id="search-button"><i class='bx bx-search-alt-2'></i></button>
+        </div>
+
+    </header>
+    <!--Barra de menu Categoria-->
+    <div class="barra-menu">
+        <nav class="barra-nav">
+            <ul class="menu-categories">
+                <li class="category"><i class='bx bxs-category'></i>Departamentos
+					<ul class="submenu">
+						<li><a href="lacteos.html"> Lacteos</a></li>
+						<li><a href="botanas.html"> Botanas</a></li>
+						<li><a href="refrescos.html"> Refrescos</a></li>
+						<li><a href="limpieza.html"> Limpieza</a></li>
+					</ul>
+                </li>
+                <li class="category"><a href="ayuda.html"><i class="fas fa-question-circle"></i> Ayuda</a></li>
+
+                <li class="category"><a href="nosotros.html"><i class="fas fa-user-friends"></i> Nosotros</a></li>
+				<!-- ... existing code ... -->
+				<li class="category"><a href="mi_cuenta.html"><i class="fas fa-address-book"></i> Mi cuenta</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <h2>Todo para la limpieza</h2>
+    <!-- Productos Productos  ProductosProductos-->
+    <div class="containerproducto">
+        <div class="product" data-price="179.00">
+            <img src="limpieza/00750179165547L.webp" alt="Producto 1" class="product-image">
+            <p class="price">$179.00</p>
+            <h3>Great Value</h3>
+            <p>Papel higiénico Great Value premium 32 rollos con 220 hojas dobles c/u
+
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="169.00">
+            <img src="limpieza/00750179165713L.webp" alt="Producto 1" class="product-image">
+            <p class="price">$169.00</p>
+            <h3>Great Value</h3>
+            <p>Detergente líquido Great Value para ropa de color 7 l
+
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="89.00">
+            <img src="limpieza/00750102540305L.webp" alt="Producto 1" class="product-image">
+            <p class="price">$89.00</p>
+            <h3>Pinol</h3>
+            <p>Limpiador Multiusos Pinol El Original 3.78 l
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="40.00">
+            <img src="limpieza/00000007500063L.webp" alt="Producto 1" class="product-image">            
+            <p class="price">$40.00</p>
+            <h3>Cloralex</h3>
+            <p>Blanqueador líquido Cloralex El Rendidor 3.75 l
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+    </div>
+    
+    <!-- ... /producto1 ... -->
+
+
+    <!-- ... producto2 ... -->
+    <div class="containerproducto">
+        <div class="product" data-price="160.00">
+            <img src="limpieza/00750103590538L.webp" alt="Producto 1" class="product-image">
+            <p class="price">$160.00</p>
+            <h3>Fabuloso</h3>
+            <p>Limpiador Líquido Multiusos Fabuloso Antibacterial Fresca Lavanda 5 L
+
+
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="45.00">
+            <img src="limpieza/00750107190014L.webp" alt="Producto 1" class="product-image">
+            <p class="price">$45.00</p>
+            <h3>Clorox</h3>
+            <p>Blanqueador líquido Clorox triple acción original 3.8 l
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="41.00">
+            <img src="limpieza/00750649506917L.webp" alt="Producto 1" class="product-image">
+            <p class="price">$41.00</p>
+            <h3>Aurrera</h3>
+            <p>Lavatrastes líquido Aurrera aroma limón 1.5 l
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+        <div class="product" data-price="61.00">
+            <img src="limpieza/00750103293821L.webp" alt="Producto 1" class="product-image">            
+            <p class="price">$61.00</p>
+            <h3>Glade</h3>
+            <p>Aromatizante ambiental Glade campos de lavanda en aerosol 400 ml
+            </p>
+            <button class="buttoncarrito">Agregar al carrito</button>
+        </div>
+    </div>
+    <!-- ... /producto2 ... -->
+
+
+<h2>Aromatizantes</h2>
+<!-- Productos Productos  ProductosProductos-->
+<div class="containerproducto">
+    <div class="product" data-price="64.00">
+        <img src="limpieza/00750103293085L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$64.00</p>
+        <h3>Glade</h3>
+        <p>Aromatizante ambiental Glade mora radiante en aerosol 400 mlRefresco Sidral Mundet light sabor manzana de 600 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="64.00">
+        <img src="limpieza/00750103290024L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$64.00</p>
+        <h3>Glade</h3>
+        <p>Aromatizante ambiental Glade en aerosol manzana y canela 400 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="80.00">
+        <img src="limpieza/00003700096264L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$80.00</p>
+        <h3>Febreze</h3>
+        <p>Aromatizante Febreze Air mediterranean lavender en aerosol 250 g</p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="30.00">
+        <img src="limpieza/00750179165531L.webp" alt="Producto 1" class="product-image">            
+        <p class="price">$30.00</p>
+        <h3>Great Value</h3>
+        <p>Aromatizante ambiental Great Value en aerosol lavanda 226 g
+
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+</div>
+<!-- ... /producto1 ... -->
+
+
+<!-- ... producto2 ... -->
+<div class="containerproducto">
+    <div class="product" data-price="145.00">
+        <img src="limpieza/00750103290633L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$145.00</p>
+        <h3>Glade</h3>
+        <p>Repuesto de aromatizante ambiental Glade automático paraíso azul en aerosol 175 g
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="145.00">
+        <img src="limpieza/00750103292838L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$145.00</p>
+        <h3>Glade</h3>
+        <p>Aromatizante automático en aerosol Glade mora radiante repuesto 270ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="145.00">
+        <img src="limpieza/00750103290533L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$145.00</p>
+        <h3>Glade</h3>
+        <p>Repuesto de aromatizante ambiental Glade automático lavanda y vainilla 175 g
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="145.00">
+        <img src="limpieza/00750103290498L.webp" alt="Producto 1" class="product-image">            
+        <p class="price">$145.00</p>
+        <h3>Glade</h3>
+        <p>Repuesto de aromatizante ambiental Glade automático manzana y canela 270 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+</div>
+<h2>Limpieza de baño</h2>
+<!-- Productos Productos  ProductosProductos-->
+<div class="containerproducto">
+    <div class="product" data-price="67.00">
+        <img src="limpieza/00750105871499L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$67.00</p>
+        <h3>Harpic</h3>
+        <p>Pastilla para tanque Harpic white & shine bicarbonato 5 pzas de 45 g c/u
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="26.00">
+        <img src="limpieza/00750105871244L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$26.00</p>
+        <h3>Harpic</h3>
+        <p>Limpiador líquido Harpic baños ultra quita sarro 500 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="26.00">
+        <img src="limpieza/00750179160161L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$26.00</p>
+        <h3>Great Value</h3>
+        <p>Limpiador líquido Great Value anti-hongos con cloro 500 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="52.00">
+        <img src="limpieza/00750102540250L.webp" alt="Producto 1" class="product-image">            
+        <p class="price">$52.00</p>
+        <h3>Cloralex</h3>
+        <p>Limpiador para baños Cloralex Total Power 650 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+</div>
+<!-- ... /producto1 ... -->
+
+
+<!-- ... producto2 ... -->
+<div class="containerproducto">
+    <div class="product" data-price="22.00">
+        <img src="limpieza/00750303281303L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$22.00</p>
+        <h3>Wow Clean</h3>
+        <p>Pastillas sanitaria Wow Clean lavanda 2 pzas de 60 g c/u
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="95.00">
+        <img src="limpieza/00750105879253L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$95.00</p>
+        <h3>Harpic</h3>
+        <p>Limpiador desinfectante para inodoro Harpic Active Gel max power 10x original 2 pzas de 750 ml c/u
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="38.00">
+        <img src="limpieza/00750105871498L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$38.00</p>
+        <h3>Harpic</h3>
+        <p>Pastilla para inodoro Harpic white & shine bicarbonato 2 pzas de 45 g c/u
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+    <div class="product" data-price="29.00">
+        <img src="limpieza/00750103292271L.webp" alt="Producto 1" class="product-image">
+        <p class="price">$29.00</p>
+        <h3>Pato</h3>
+        <p>Limpiador líquido Pato antihongos para baño 500 ml
+        </p>
+        <button class="buttoncarrito">Agregar al carrito</button>
+    </div>
+</div>
+    <!-- ... modal ... -->
+    <div id="productModal" class="product-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-product-info">
+                <img id="modalImage" src="" alt="Product Image">
+                <div class="modal-details">
+                    <h2 class="modal-title"></h2>
+                    <p class="modal-description"></p>
+                    <p class="modal-price"></p>
+                    <div class="modal-extra-info">
+                        <ul>
+                            <li><i class='bx bx-check'></i> Envío gratis</li>
+                            <li><i class='bx bx-time'></i> Entrega en 1-3 horas</li>
+                            <li><i class='bx bx-package'></i> Devolución gratuita</li>
+                        </ul>
+                    </div>
+                    <button class="buttoncarrito">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ... /modal ... -->
+
+    <div class="cart-container" id="cart">
+        <div class="cart-header">
+            <h2>Carrito</h2>
+            <span class="cart-close">&times;</span>
+        </div>
+        <div class="cart-items">
+            <!-- Los items se agregarán dinámicamente -->
+        </div>
+        <div class="cart-total">
+            <div>Total: <span class="cart-total-price">$0.00</span></div>
+            <a href="pago.html"><button class="checkout-btn">Proceder al Pago</button></a>
+        </div>
+    </div>        <footer class="footer">
+        <div class="footer-bottom">
+            <h3>Contacto</h3>
+                <p><i class='bx bx-envelope'></i> abarrotesangeles@gmail.com</p>
+                <p><i class='bx bx-phone'></i> (52) 637-325-1251</p>
+                <p><i class='bx bx-map'></i> Av. Principal #123, CDMX</p>
+            <p>&copy; 2024 Angeles. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="scripts/userDisplay.js"></script>
+<script src="scripts/cart.js"></script>
+<script src="scripts/modal.js"></script>
+<script src="scripts/search.js"></script>
+
+</body>
+</html>

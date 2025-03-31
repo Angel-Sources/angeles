@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados de Búsqueda</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    		
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="menu/menu.css">
+    <link rel="stylesheet" href="css/searchbar.css">
+    <link rel="stylesheet" href="css/producto.css">
+    <link rel="stylesheet" href="css/producto2.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/barraCategoriaMenu.css">
+    <style>body {
+        background: #f8f9fa;
+        color: #2d3748;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Productos */
+    .containerproducto {
+        max-width: 1400px;
+        margin: 2rem auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        flex-grow: 1;
+    }
+    
+    .product {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 400px;
+    }
+    
+    .product:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product img {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+    
+    .buttoncarrito {
+        background: linear-gradient(135deg, #0071dc 0%, #0051a8 100%);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: auto;
+        width: 100%;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .buttoncarrito:hover {
+        background: linear-gradient(135deg, #0051a8 0%, #003975 100%);
+        transform: scale(1.02);
+    }
+    
+    
+    /* Footer */
+    .footer {
+        background: #0071dc;
+        color: white;
+        padding: 3rem 2rem;
+        margin-top: auto;
+    }
+    
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .footer-bottom h3 {
+        margin-bottom: 1.5rem;
+        color: white;
+    }
+    
+    .footer-bottom p {
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+        .modal-product-info {
+            grid-template-columns: 1fr;
+        }
+        
+        .containerproducto {
+            grid-template-columns: 1fr;
+            padding: 0 1rem;
+        }
+    }</style>
+</head>
+<body>
+    <header>
+        <a href="inicio.html"><h1><i class='bx bx-arrow-back'></i> Volver</h1></a>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar productos...">
+            <button class="buscar-button" id="search-button"><i class='bx bx-search-alt-2'></i></button>
+        </div>        <button id="cart-button" class="cart">
+            <div class="content-avatars">
+                <div class="cart-status"></div>
+                <div class="avatars">
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <div class="notice-content">
+                <div class="cart-count">0 items</div>
+                <div class="cart-total-mini">$0.00</div>
+            </div>
+        </button>
+    </header>
+    <div class="barra-menu">
+        <nav class="barra-nav">
+            <ul class="menu-categories">
+                <li class="category"><i class='bx bxs-category'></i>Departamentos
+					<ul class="submenu">
+						<li><a href="lacteos.html"> Lacteos</a></li>
+						<li><a href="botanas.html"> Botanas</a></li>
+						<li><a href="refrescos.html"> Refrescos</a></li>
+						<li><a href="limpieza.html"> Limpieza</a></li>
+					</ul>
+                </li>
+                <li class="category"><a href="ayuda.html"><i class="fas fa-question-circle"></i> Ayuda</a></li>
+
+                <li class="category"><a href="nosotros.html"><i class="fas fa-user-friends"></i> Nosotros</a></li>
+				<li class="category"><a href="mi_cuenta.html"><i class="fas fa-address-book"></i> Mi cuenta</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <h2>Resultados de Búsqueda</h2>
+    <div class="containerproducto" id="search-results">
+        <!-- Los resultados de búsqueda se agregarán dinámicamente aquí -->
+    </div>
+    <div id="productModal" class="product-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-product-info">
+                <img id="modalImage" src="" alt="Product Image">
+                <div class="modal-details">
+                    <h2 class="modal-title"></h2>
+                    <p class="modal-description"></p>
+                    <p class="modal-price"></p>
+                    <div class="modal-extra-info">
+                        <ul>
+                            <li><i class='bx bx-check'></i> Envío gratis</li>
+                            <li><i class='bx bx-time'></i> Entrega en 1-3 horas</li>
+                            <li><i class='bx bx-package'></i> Devolución gratuita</li>
+                        </ul>
+                    </div>
+                    <button class="buttoncarrito">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cart-container" id="cart">
+        <div class="cart-header">
+            <h2>Carrito</h2>
+            <span class="cart-close">&times;</span>
+        </div>
+        <div class="cart-items">
+            <!-- Los items se agregarán dinámicamente -->
+        </div>
+        <div class="cart-total">
+            <div>Total: <span class="cart-total-price">$0.00</span></div>
+            <a href="pago.html"><button class="checkout-btn">Proceder al Pago</button></a>
+        </div>
+    </div>        <footer class="footer">
+        <div class="footer-bottom">
+            <h3>Contacto</h3>
+                <p><i class='bx bx-envelope'></i> abarrotesangeles@gmail.com</p>
+                <p><i class='bx bx-phone'></i> (52) 637-325-1251</p>
+                <p><i class='bx bx-map'></i> Av. Principal #123, CDMX</p>
+            <p>&copy; 2024 Angeles. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="scripts/userDisplay.js"></script>
+<script src="scripts/cart.js"></script>
+<script src="scripts/modal.js"></script>
+<script src="scripts/search.js"></script>
+    <script src="scripts/searchResults.js"></script>
+</body>
+</html>

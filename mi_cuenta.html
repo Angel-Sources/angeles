@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - Perfil</title>
+    <link rel="stylesheet" href="micuenta.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="profile-header">
+            <a href="inicio.html" class="back-button"><i class='bx bx-chevron-left'></i></a>
+            <h1>Mi Perfil</h1>
+        </div>
+        
+        <div class="profile-picture">
+            <div class="avatar-container">
+                <div class="avatar-overlay">
+                    <input type="file" id="avatarUpload" accept="image/*" hidden>
+                    <label for="avatarUpload" class="camera-icon">
+                        <i class='bx bx-camera'></i>
+                    </label>
+                </div>
+                <img src="default-avatar.jpg" id="profileImage" class="avatar-image" alt="Avatar">
+            </div>
+        </div>
+
+        <form id="profileForm">
+            <div class="input-group">
+                <div class="input-box">
+                    <label>Nombre de Usuario</label>
+                    <div class="input-field">
+                        <input type="text" id="username" required disabled>
+                        <button type="button" class="edit-btn" id="editUsername">
+                            <i class='bx bxs-edit-alt'></i>
+                        </button>
+                        <i class='bx bxs-user input-icon'></i>
+                    </div>
+                </div>
+                
+                <div class="input-box">
+                    <label>Correo Electrónico</label>
+                    <div class="input-field">
+                        <input type="email" id="email" required disabled>
+                        <button type="button" class="edit-btn" id="editEmail">
+                            <i class='bx bxs-edit-alt'></i>
+                        </button>
+                        <i class='bx bxs-envelope input-icon'></i>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <label>Contraseña</label>
+                    <div class="input-field">
+                        <input type="password" id="password" placeholder="••••••••" disabled>
+                        <button type="button" class="edit-btn" id="editPassword">
+                            <i class='bx bxs-edit-alt'></i>
+                        </button>
+                        <i class='bx bxs-lock-alt input-icon'></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button type="submit" class="btn btn-save" id="saveButton" style="display: none;">
+                    <span>Guardar Cambios</span>
+                    <i class='bx bx-check'></i>
+                </button>
+                <button type="button" class="btn btn-logout" id="logout">
+                    <span>Cerrar Sesión</span>
+                    <i class='bx bx-power-off'></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = JSON.parse(localStorage.getItem('currentUser'));
+            if (!user) {
+                window.location.href = 'login2.html';
+                return;
+            }
+
+            // Configurar imagen de perfil
+            const profileImage = document.getElementById('profileImage');
+            const avatarUpload = document.getElementById('avatarUpload');
+            if(user.avatar) profileImage.src = user.avatar;
+
+            // Manejar subida de imagen
+            avatarUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        profileImage.src = e.target.result;
+                        user.avatar = e.target.result;
+                        localStorage.setItem('currentUser', JSON.stringify(user));
+                        showToast('Imagen actualizada correctamente', 'success');
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Configurar datos del usuario
+            const usernameInput = document.getElementById('username');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const saveButton = document.getElementById('saveButton');
+            
+            const originalValues = {
+                username: user.username,
+                email: user.email,
+                password: user.password
+            };
+
+            usernameInput.value = originalValues.username;
+            emailInput.value = originalValues.email;
+            passwordInput.value = '••••••••';
+
+            // Funcionalidad de edición
+            const editButtons = {
+                username: document.getElementById('editUsername'),
+                email: document.getElementById('editEmail'),
+                password: document.getElementById('editPassword')
+            };
+
+            Object.keys(editButtons).forEach(field => {
+                editButtons[field].addEventListener('click', () => {
+                    const input = document.getElementById(field);
+                    if (input.disabled) {
+                        input.disabled = false;
+                        if(field === 'password') input.value = '';
+                        input.focus();
+                        editButtons[field].innerHTML = '<i class="bx bx-check"></i>';
+                    } else {
+                        input.disabled = true;
+                        if(field === 'password') input.value = '••••••••';
+                        editButtons[field].innerHTML = '<i class="bx bxs-edit-alt"></i>';
+                        checkChanges();
+                    }
+                });
+            });
+
+            function checkChanges() {
+                const hasChanges = 
+                    usernameInput.value !== originalValues.username ||
+                    emailInput.value !== originalValues.email ||
+                    (passwordInput.value !== '••••••••' && passwordInput.value !== originalValues.password);
+
+                saveButton.style.display = hasChanges ? 'flex' : 'none';
+            }
+
+            // Eventos de entrada
+            [usernameInput, emailInput, passwordInput].forEach(input => {
+                input.addEventListener('input', checkChanges);
+            });
+
+            // Enviar formulario
+            document.getElementById('profileForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const updatedUser = {
+                    ...user,
+                    username: usernameInput.value,
+                    email: emailInput.value,
+                    password: passwordInput.value !== '••••••••' ? passwordInput.value : user.password
+                };
+
+                localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+                Object.assign(originalValues, updatedUser);
+                passwordInput.value = '••••••••';
+                saveButton.style.display = 'none';
+                
+                showToast('Cambios guardados exitosamente', 'success');
+            });
+
+            // Cerrar sesión
+            document.getElementById('logout').addEventListener('click', function() {
+                localStorage.removeItem('currentUser');
+                window.location.href = 'login2.html';
+            });
+
+            function showToast(message, type) {
+                const toast = document.createElement('div');
+                toast.className = `toast ${type}`;
+                toast.textContent = message;
+                document.body.appendChild(toast);
+
+                setTimeout(() => {
+                    toast.remove();
+                }, 3000);
+            }
+        });
+    </script>
+
+    <style>
+        /* Estilos mejorados */
+        body {
+            background: linear-gradient(135deg, #323232 0%, #1a1a1a 100%);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .wrapper {
+            width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-header {
+            margin-bottom: 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .back-button {
+            color: #0071dc;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .back-button:hover {
+            transform: translateX(-3px);
+        }
+
+        .avatar-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 30px;
+            position: relative;
+            border-radius: 50%;
+            border: 3px solid #0071dc;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .avatar-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .avatar-container:hover .avatar-overlay {
+            opacity: 1;
+        }
+
+        .camera-icon {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+        }
+
+        .input-box {
+            margin: 25px 0;
+        }
+
+        .input-field {
+            position: relative;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 50px;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .input-box input:focus {
+            border-color: #0071dc;
+            box-shadow: 0 0 8px rgba(0, 113, 220, 0.2);
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            font-size: 20px;
+        }
+
+        .edit-btn {
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #0071dc;
+            cursor: pointer;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .edit-btn:hover {
+            color: #005bb8;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 25px;
+            border-radius: 40px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            gap: 10px;
+        }
+
+        .btn-save {
+            background: linear-gradient(135deg, #0071dc 0%, #0051a8 100%);
+        }
+
+        .btn-logout {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0.95;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 25px;
+            border-radius: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            animation: slideUp 0.3s ease-out;
+            font-weight: 500;
+        }
+
+        .toast.success {
+            background: #4CAF50;
+            color: white;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translate(-50%, 100%);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, 0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                width: 95%;
+                padding: 30px;
+            }
+            
+            .avatar-container {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .edit-btn {
+                right: 45px;
+            }
+        }
+    </style>
+</body>
+</html>
